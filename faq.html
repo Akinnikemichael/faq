@@ -8,6 +8,83 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans" rel="stylesheet">
     <title>Contact Us</title>
+    <style>
+        .Contact-Us-Heading {
+            color: #084482;
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 29px;
+            line-height: 33px;
+            text-align: center;
+        }
+        
+        #Name {
+            background: #FFFFFF;
+            border: 1px solid #868686;
+            box-sizing: border-box;
+            position: absolute;
+            width: 1110px;
+            height: 50px;
+            left: 165px;
+            top: 200px;
+        }
+        
+        #email {
+            background: #FFFFFF;
+            border: 1px solid #868686;
+            box-sizing: border-box;
+            position: absolute;
+            width: 1110px;
+            height: 50px;
+            left: 165px;
+            top: 260px;
+        }
+        
+        #Subject {
+            position: absolute;
+            width: 1110px;
+            height: 50px;
+            left: 165px;
+            top: 320px;
+            background: #FFFFFF;
+            border: 1px solid #868686;
+            box-sizing: border-box;
+        }
+        
+        #Message {
+            position: absolute;
+            width: 1110px;
+            height: 297px;
+            left: 165px;
+            top: 380px;
+            background: #FFFFFF;
+            border: 1px solid #868686;
+            box-sizing: border-box;
+        }
+        
+        .submit {
+            position: absolute;
+            left: 165px;
+            height: 57px;
+            width: 1110px;
+            top: 700px;
+            bottom: 1.96%;
+            background: #00AEFF;
+            box-shadow: 0px 4px 6px rgba(50, 50, 93, 0.11), 0px 1px 3px rgba(0, 0, 0, 0.08);
+            border-radius: 4px;
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 29px;
+            line-height: 22px;
+            /* identical to box height */
+            text-align: center;
+            letter-spacing: 0.315px;
+            color: #FFFFFF;
+        }
+    </style>
+
     <div class="Contact-Us-Heading">
         <h1>
             Not a Frequently Asked Question?
@@ -19,13 +96,13 @@
     <div class="table">
         <form action="/action_page.php" class="label">
 
-            <input type="text" name="name" id="Name" placeholder="Name" required><br>
+            <input pattern=".{4,20}" type="text" name="name" id="Name" placeholder="Name" required title="4 to 20 characters"><br>
 
-            <input type="text" name="email" id="email" placeholder="Email" required><br>
+            <input pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" type="text" name="email" id="email" placeholder="Email" required title="email address"><br>
 
-            <input type="varchar" name="Subject" id="Subject" placeholder="Subject" required><br>
+            <input pattern=".{20,100}" type="varchar" name="Subject" id="Subject" placeholder="Subject" required title="20 to 100 characters"><br>
 
-            <textarea name="Message" id="Message" cols="30" rows="10" placeholder="Write A Message" required>Write A Message</textarea>
+            <textarea maxlength="250" minlength="20" name="Message" id="Message" cols="30" rows="10" placeholder="Write A Message" required title="20 to 250 characters">Write A Message</textarea>
         </form>
         <br>
         <br>
